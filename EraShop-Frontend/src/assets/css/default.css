@@ -1,0 +1,104 @@
+
+:root {
+  --black--: #000;
+  --white--: #fff;
+  --prime--: #b93160;
+  --blackPrime--: #fd90b6;
+  --grayPrime--: #cfcfcf;
+  --inputBorder--: #cbd5e1;
+  --btnPrime--: #b93160;
+  --cardBorder-- : #e8e8e82e;
+  --cardBackground--: #ffffff;
+  --fontJakarta--: 'Plus Jakarta Sans', sans-serif;
+
+
+  /* New Color */
+  --themePrime--: #b93160;
+}
+
+/* Start Default CSS */
+
+a {
+  text-decoration: none;
+  
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* End Default CSS */
+
+/* Start Theme Text Color */
+.primeColor {
+  color: var(--themePrime--) !important;
+}
+
+.primeBlackColor {
+  color: var(--black--) !important;
+}
+
+.grayText {
+  color: gray;
+}
+
+/* End Theme Text Color */
+
+/* Default Custom Dynamic CSS */
+
+.themeFont {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black--);
+}
+.whiteFont {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white--);
+}
+
+.boxCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.boxEnd{
+  display: flex !important;
+  align-items: end !important;
+  justify-content: end !important;
+}
+
+.mainContainer {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.containerRight {
+  height: 100vh;
+  overflow: scroll;
+}
+.card{
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 8px  rgba(0, 0, 0, 0.10); */
+}
+
+.swal-modal {
+  background: #ffffffcc;
+  backdrop-filter: saturate(180%) blur(4px);
+}
+button{
+  cursor: pointer !important;
+  word-spacing: 2px;
+}

@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6436376738292b4945610771"
+  },
+  "privacyPolicyLink": "https://www.termsfeed.com/live/32b980c4-2fc9-4d63-b903-c9b110a553ed",
+  "privacyPolicyText": "PRIVACY POLICY TEXT",
+  "agoraKey": "Zegocloud App Id",
+  "agoraCertificate": "Zegocloud App Sign In",
+  "withdrawCharges": 10,
+  "withdrawLimit": 1000,
+  "createdAt": {
+    "$date": "2023-04-12T04:45:27.628Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-18T04:58:03.435Z"
+  },
+  "cancelOrderCharges": 20,
+  "paymentGateway": [
+    {
+      "name": "paytm"
+    },
+    {
+      "name": "phonePe"
+    }
+  ],
+  "adminCommissionCharges": 50,
+  "isAddProductRequest": true,
+  "razorPayId": "RAZOR PAY ID",
+  "razorPaySwitch": true,
+  "razorSecretKey": "RAZOR SECRET KEY",
+  "stripePublishableKey": "STRIPE PUBLISHABLE KEY",
+  "stripeSecretKey": "STRIPE SECRET KEY",
+  "stripeSwitch": true,
+  "isUpdateProductRequest": true,
+  "isFakeData": true
+}]

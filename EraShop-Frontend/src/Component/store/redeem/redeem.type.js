@@ -1,0 +1,9 @@
+export const GET_REDEEM_REQUEST = "GET_REDEEM_REQUEST";
+
+export const REDEEM_ACTION = "REDEEM_ACTION";
+
+
+export const ADMIN_WALLET = "ADMIN_WALLET";
+
+
+

@@ -93,7 +93,7 @@ app.get("/*", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-mongoose.connect(`YOUR_MONGODB_CONNECTION_STRING`, {
+mongoose.connect(`mongodb+srv://admin:3ftnRmpbR2n8gtv9@livepay.yjctbbj.mongodb.net/`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

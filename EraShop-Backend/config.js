@@ -3,7 +3,7 @@ module.exports = {
   PORT: process.env.PORT || 5000,
 
   //Secret key for API
-  SECRET_KEY: "D-lRnkhY#D_w`@DGnsRHik85}sy{Ex}n0<of|5[{o.-CZG_Skl35l[gh:$Pi+|l",
+  SECRET_KEY: "D-lRnkhY#",
 
   //Gmail credentials for send email
   EMAIL: "YOUR_EMAIL",

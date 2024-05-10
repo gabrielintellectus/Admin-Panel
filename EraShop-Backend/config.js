@@ -13,7 +13,7 @@ module.exports = {
   JWT_SECRET: "D-lRnkhY#",
 
   //baseURL
-  baseURL: "https://service.livepay.app.br",
+  baseURL: "https://service.livepay.app.br/",
 
   //Firebase server key for send notification
   SERVER_KEY: "YOUR_SERVER_KEY",

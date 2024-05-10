@@ -1,6 +1,6 @@
 import $ from "jquery";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Logo from "../../assets/images/Frame 162747.png";
+import Logo from "../../assets/images/Frame 1627472.png";
 import Navigator from "../extra/Navigator";
 import { warning } from "../util/Alert";
 import { useDispatch } from "react-redux";

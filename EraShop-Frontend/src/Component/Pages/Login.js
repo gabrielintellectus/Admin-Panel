@@ -55,7 +55,7 @@ const Login = (props) => {
               >
                 <img
                   className="img-fluid"
-                  src={require("../../assets/images/Group 2033 1.png")}
+                  src={require("../../assets/images/Group 2034.png")}
                   alt=""
                   srcset=""
                 />
@@ -67,7 +67,7 @@ const Login = (props) => {
                   <div className="my-4">
                     <div className="loginLogo  me-3 pt-1 pe-1">
                       <img
-                        src={require("../../assets/images/Frame 162747.png")}
+                        src={require("../../assets/images/Frame 1627472.png")}
                         alt=""
                         width={"80px"}
                       />

@@ -91,7 +91,7 @@ exports.index = async (req, res) => {
 //handle setting switch
 exports.handleSwitch = async (req, res) => {
   try {
-    if (!req.query.settingId || !req.query.type) return res.status(200).json({ status: false, message: "OOps ! Invalid details!!" });
+    if (!req.query.settingId || req.query.settingId.lenght === 0 || req.query.settingId === "undefined" || !req.query.type) return res.status(200).json({ status: false, message: "OOps ! Invalid details!!" });
 
     const setting = await Setting.findById(req.query.settingId);
     if (!setting) return res.status(200).json({ status: false, message: "Setting does not found!!" });

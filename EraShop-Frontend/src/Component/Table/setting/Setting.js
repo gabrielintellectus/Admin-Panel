@@ -108,7 +108,7 @@ const Setting = (props) => {
   const handleClick = (type) => {
     //Handle Update Switch Value
     
-    props.handleToggleSwitch(setting._id, type, setting);
+    props.handleToggleSwitch(setting?._id, type, setting);
   };
 
   return (

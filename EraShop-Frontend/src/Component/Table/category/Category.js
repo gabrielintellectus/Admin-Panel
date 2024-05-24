@@ -36,7 +36,7 @@ const Category = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  let categoryId = category._id;
+  // let categoryId = category._id;
 
   useEffect(() => {
     dispatch(getCategory());

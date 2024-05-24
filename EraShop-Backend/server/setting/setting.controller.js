@@ -24,7 +24,7 @@ exports.update = async (req, res) => {
     console.log("***********", req.query.settingId)
     if (!req.query.settingId || req.query.settingId.lenght === 0) return res.status(200).json({ status: false, message: "SettingId is requried!!" });
 
-    const setting = await Setting.findById(req.query.settingId);
+    const setting = await Setting.findById(!req.query.settingId ? " " : req.query.settingId);
     if (!setting) {
       return res.status(200).json({ status: false, message: "Setting does not found!!" });
     }

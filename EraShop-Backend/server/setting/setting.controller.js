@@ -22,7 +22,7 @@ exports.store = async (req, res) => {
 exports.update = async (req, res) => {
   try {
     console.log("***********", req.query.settingId)
-    if (!req.query.settingId || req.query.settingId.lenght === 0) return res.status(200).json({ status: false, message: "SettingId is requried!!" });
+    if (!req.query.settingId || req.query.settingId.lenght === 0 || req.query.settingId === "undefined") return res.status(200).json({ status: false, message: "SettingId is requried!!" });
 
     const setting = await Setting.findById(!req.query.settingId ? " " : req.query.settingId);
     if (!setting) {

@@ -117,6 +117,7 @@ exports.handleSwitch = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       status: false,
+      res: req.query.settingId,
       error: error.message || "Internal Server Error!!",
     });
   }

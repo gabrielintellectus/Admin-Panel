@@ -6,8 +6,8 @@ module.exports = {
   SECRET_KEY: "D-lRnkhY#",
 
   //Gmail credentials for send email
-  EMAIL: "ismaeleliper@gmail.com",
-  PASSWORD: "ghdk cxkx mqtt gfql",
+  EMAIL: "contato@itlbet.com.br",
+  PASSWORD: "jfvh wwjb bilv ntsw",
 
   //Secret key for jwt
   JWT_SECRET: "D-lRnkhY#",
@@ -16,5 +16,5 @@ module.exports = {
   baseURL: "https://service.livepay.app.br/",
 
   //Firebase server key for send notification
-  SERVER_KEY: "AIzaSyDXdiafcgdoqy93RWCU4olWjOOua3ezBhY",
+  SERVER_KEY: "AIzaSyCSFvenY7LWz5qTGIYB6Zfomx2aE9GLiyw",
 };

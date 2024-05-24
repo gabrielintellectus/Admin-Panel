@@ -21,7 +21,6 @@ exports.store = async (req, res) => {
 //update Setting
 exports.update = async (req, res) => {
   try {
-    console.log("***********", req.query.settingId)
     if (!req.query.settingId || req.query.settingId.lenght === 0 || req.query.settingId === "undefined") return res.status(200).json({ status: false, message: "SettingId is requried!!" });
 
     const setting = await Setting.findById(!req.query.settingId ? " " : req.query.settingId);
@@ -64,7 +63,6 @@ exports.update = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       status: false,
-      res: req.query.settingId,
       error: error.message || "Internal Server Error!!",
     });
   }
@@ -117,7 +115,6 @@ exports.handleSwitch = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       status: false,
-      res: req.query.settingId,
       error: error.message || "Internal Server Error!!",
     });
   }

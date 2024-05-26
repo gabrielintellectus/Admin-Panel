@@ -55,84 +55,77 @@ exports.getRealReels = async (req, res) => {
 //upload fake reel by the admin
 exports.uploadReelByAdmin = async (req, res) => {
   try {
-    if (!req.body.sellerId || !req.body.productId) {
+    // Validação inicial
+    const { sellerId, productId, duration, video, thumbnail } = req.body;
+    if (!sellerId || !productId) {
       if (req.files) deleteFiles(req.files);
-      return res.status(200).json({ status: false, message: "Oops ! Invalid details!" });
+      return res.status(400).json({ status: false, message: "Oops ! Invalid details!" });
     }
 
+    // Verificar se o seller e o product existem e estão válidos
     const [seller, product] = await Promise.all([
-      Seller.findOne({ _id: req.body.sellerId, isFake: false }),
-      Product.findOne({ _id: req.body.productId, createStatus: "Approved" }),
+      Seller.findOne({ _id: sellerId, isFake: false }),
+      Product.findOne({ _id: productId, createStatus: "Approved" }),
     ]);
 
     if (!seller) {
       if (req.files) deleteFiles(req.files);
-      return res.status(200).json({ status: false, message: "seller does not found!" });
+      return res.status(404).json({ status: false, message: "Seller not found!" });
     }
 
     if (seller.isBlock) {
       if (req.files) deleteFiles(req.files);
-      return res.status(200).json({ status: false, message: "you are blocked by admin!" });
+      return res.status(403).json({ status: false, message: "You are blocked by admin!" });
     }
 
     if (!product) {
       if (req.files) deleteFiles(req.files);
-      return res.status(200).json({ status: false, message: "Product does not found!" });
+      return res.status(404).json({ status: false, message: "Product not found!" });
     }
 
-    const reel = new Reel();
+    // Criar nova instância de Reel
+    const reel = new Reel({
+      sellerId: seller._id,
+      productId: product._id,
+      duration: duration,
+    });
 
-    reel.sellerId = seller._id;
-    reel.productId = product._id;
-    reel.duration = req?.body?.duration;
-    reel.isFake = true;
-
-    if (req?.files?.video) {
-      const video = reel?.video?.split("storage");
-
-      if (video) {
-        if (fs.existsSync("storage" + video[1])) {
-          fs.unlinkSync("storage" + video[1]);
-        }
-      }
-
+    // Processar e salvar video
+    if (req.files?.video) {
       reel.videoType = 1;
       reel.video = config.baseURL + req.files.video[0].path;
     } else {
       reel.videoType = 2;
-      reel.video = req?.body?.video;
+      reel.video = video;
     }
 
-    if (req?.files?.thumbnail) {
-      const thumbnail = reel?.thumbnail?.split("storage");
-      if (thumbnail) {
-        if (fs.existsSync("storage" + thumbnail[1])) {
-          fs.unlinkSync("storage" + thumbnail[1]);
-        }
-      }
-
+    // Processar e salvar thumbnail
+    if (req.files?.thumbnail) {
       reel.thumbnailType = 1;
       reel.thumbnail = config.baseURL + req.files.thumbnail[0].path;
     } else {
       reel.thumbnailType = 2;
-      reel.thumbnail = req?.body?.thumbnail;
+      reel.thumbnail = thumbnail;
     }
 
+    // Salvar Reel no banco de dados
     await reel.save();
 
+    // Obter dados completos do Reel salvo
     const data = await Reel.findById(reel._id).populate([
       { path: "sellerId", select: "firstName lastName businessTag businessName" },
       { path: "productId", select: "productName productCode price shippingCharges mainImage seller createStatus attributes" },
     ]);
 
+    // Resposta de sucesso
     return res.status(200).json({
       status: true,
-      message: "finally, reel has been uploaded by the seller!",
+      message: "Reel has been successfully uploaded!",
       reel: data,
     });
   } catch (error) {
     if (req.files) deleteFiles(req.files);
-    console.log(error);
+    console.error(error);
     return res.status(500).json({
       status: false,
       error: error.message || "Internal Server Error",

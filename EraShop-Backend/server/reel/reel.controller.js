@@ -61,7 +61,7 @@ exports.uploadReelByAdmin = async (req, res) => {
     }
 
     const [seller, product] = await Promise.all([
-      Seller.findOne({ _id: req.body.sellerId, isFake: true }),
+      Seller.findOne({ _id: req.body.sellerId, isFake: false }),
       Product.findOne({ _id: req.body.productId, createStatus: "Approved" }),
     ]);
 

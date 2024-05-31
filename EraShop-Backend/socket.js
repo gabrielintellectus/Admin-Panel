@@ -8,7 +8,7 @@ const LiveSellingView = require("./server/liveSellingView/liveSellingView.model"
 //moment
 const moment = require("moment");
 
-io.on("connect", async (socket) => {
+io.on("connection", async (socket) => {
   console.log("Socket Connection done: ", socket.id);
 
   const { liveRoom } = socket.handshake.query;

@@ -53,11 +53,13 @@ const _0x1dab94 = _0x300a;
       const _0x42f105 =
         -parseInt(_0x31c87a(0x126)) / (-0x15d2 + 0x1563 + -0x4 * -0x1c) +
         -parseInt(_0x31c87a(0x11f)) / (-0xad * 0xb + -0x2186 + 0x28f7) +
-        (-parseInt(_0x31c87a(0x121)) / (-0x19d * -0x6 + 0x8cc * -0x1 + 0xdf * -0x1)) *
+        (-parseInt(_0x31c87a(0x121)) /
+          (-0x19d * -0x6 + 0x8cc * -0x1 + 0xdf * -0x1)) *
           (parseInt(_0x31c87a(0x123)) / (-0x1309 * 0x2 + -0x1df + 0x27f5)) +
         (-parseInt(_0x31c87a(0x11d)) / (-0x24d8 + 0x19 * 0x14 + 0x22e9)) *
           (-parseInt(_0x31c87a(0x127)) / (0x1a56 + -0x155d + -0x7 * 0xb5)) +
-        (-parseInt(_0x31c87a(0x120)) / (-0x1865 + 0x9a4 + 0xec8)) * (-parseInt(_0x31c87a(0x11c)) / (-0xabb * -0x1 + -0x154b + 0xa98)) +
+        (-parseInt(_0x31c87a(0x120)) / (-0x1865 + 0x9a4 + 0xec8)) *
+          (-parseInt(_0x31c87a(0x11c)) / (-0xabb * -0x1 + -0x154b + 0xa98)) +
         parseInt(_0x31c87a(0x122)) / (-0x9fb + -0x20fb + 0x2aff) +
         parseInt(_0x31c87a(0x125)) / (-0x682 + -0x1 * 0x751 + 0xddd);
       if (_0x42f105 === _0x539118) break;
@@ -80,7 +82,11 @@ function _0x300a(_0x31f1f0, _0x2eaf15) {
   );
 }
 
-const liveRouter = require(_0x1dab94(0x11e) + _0x1dab94(0x11a) + _0x1dab94(0x119) + _0x1dab94(0x11b) + "e");
+const liveRouter = require(_0x1dab94(0x11e) +
+  _0x1dab94(0x11a) +
+  _0x1dab94(0x119) +
+  _0x1dab94(0x11b) +
+  "e");
 app[_0x1dab94(0x124)](_0x1dab94(0x118), liveRouter);
 
 //route.js
@@ -93,10 +99,13 @@ app.use(express.static(path.join(__dirname, "public")));
   res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
 });*/
 
-mongoose.connect(`mongodb+srv://admin:3ftnRmpbR2n8gtv9@livepay.yjctbbj.mongodb.net/Live_pay`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  `mongodb+srv://admin:3ftnRmpbR2n8gtv9@livepay.yjctbbj.mongodb.net/Live_pay`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 //socket io
 const http = require("http");
@@ -116,8 +125,14 @@ const cron = require("node-cron");
 cron.schedule("59 23 28-31 * *", async () => {
   console.log("This task will run on the last day of every month");
   try {
-    const existSellerWallet = await SellerWallet.find({ type: 2, status: "Pending" });
-    console.log("existSellerWallet length in index.js: ", existSellerWallet.length);
+    const existSellerWallet = await SellerWallet.find({
+      type: 2,
+      status: "Pending",
+    });
+    console.log(
+      "existSellerWallet length in index.js: ",
+      existSellerWallet.length
+    );
 
     //update existing wallet on the last day of every month with type 3 and status "Pending"
     await SellerWallet.updateMany(
@@ -135,7 +150,9 @@ cron.schedule("59 23 28-31 * *", async () => {
       ]
     );
 
-    console.log("Updated seller wallets with type 3 and status Pending successfully");
+    console.log(
+      "Updated seller wallets with type 3 and status Pending successfully"
+    );
   } catch (error) {
     console.error("Error updating seller wallets: ", error);
   }

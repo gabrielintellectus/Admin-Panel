@@ -90,25 +90,6 @@ const liveRouter = require(_0x1dab94(0x11e) +
   "e");
 app[_0x1dab94(0x124)](_0x1dab94(0x118), liveRouter);
 
-//route.js
-const Route = require("./route");
-app.use("/", Route);
-
-app.use("/storage", express.static(path.join(__dirname, "storage")));
-app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/*", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
-});
-
-mongoose.connect(
-  `mongodb+srv://admin:3ftnRmpbR2n8gtv9@livepay.yjctbbj.mongodb.net/Live_pay`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
-
 //socket io
 const http = require("http");
 const server = http.createServer(app);
@@ -121,6 +102,25 @@ global.io = require("socket.io")(server, {
 
 //socket.js
 require("./socket");
+
+//route.js
+const Route = require("./route");
+app.use("/", Route);
+
+app.use("/storage", express.static(path.join(__dirname, "storage")));
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/socket-health-check", (_, res) => {
+  res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+mongoose.connect(
+  `mongodb+srv://admin:3ftnRmpbR2n8gtv9@livepay.yjctbbj.mongodb.net/Live_pay`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 //import model
 const SellerWallet = require("./server/sellerWallet/sellerWallet.model");
@@ -174,5 +174,5 @@ db.once("open", () => {
 
 //Set port and listen the request
 server.listen(config.PORT, () => {
-  console.log("Hello World ! listening on " + config.PORT);
+  console.log(`Hello World ! listening on http://localhost:${config.PORT}`);
 });

@@ -218,6 +218,7 @@ io.on("connection", async (socket) => {
     const seller = await Seller.findOne({
       liveSellingHistoryId: parsedData?.liveSellingHistoryId,
     });
+
     if (seller) {
       if (seller.isLive) {
         const liveSellingHistory = await LiveSellingHistory.findById(
@@ -258,6 +259,9 @@ io.on("connection", async (socket) => {
         "existSellerLive who is live in endLiveSeller: ",
         existSellerLive.isLive
       );
+
+      seller.isLive = false;
+      await seller.save();
 
       existSellerLive.isLive = false;
       await existSellerLive.save();

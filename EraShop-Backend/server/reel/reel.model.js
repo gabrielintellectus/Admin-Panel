@@ -5,8 +5,8 @@ const ReelSchema = new mongoose.Schema(
     thumbnail: { type: String, default: "" },
     video: { type: String, default: "" },
 
-    videoType: { type: Number, enum: [1, 2], default: 1 }, //1 :file 2: link
-    thumbnailType: { type: Number, enum: [1, 2], default: 1 }, //1 :file 2: link
+    videoType: { type: Number, enum: [1, 2], default: 2}, //1 :file 2: link
+    thumbnailType: { type: Number, enum: [1, 2], default: 2}, //1 :file 2: link
 
     productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product", default: null },
     sellerId: { type: mongoose.Schema.Types.ObjectId, ref: "Seller", default: null },

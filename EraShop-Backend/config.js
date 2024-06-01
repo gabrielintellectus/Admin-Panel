@@ -14,6 +14,7 @@ module.exports = {
 
   //baseURL
   baseURL: "https://service.livepay.app.br/",
+  // baseURL: "http://localhost:5000/",
 
   //Firebase server key for send notification
   SERVER_KEY: "AIzaSyCSFvenY7LWz5qTGIYB6Zfomx2aE9GLiyw",

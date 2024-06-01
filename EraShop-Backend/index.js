@@ -44,6 +44,7 @@ function _0x4416() {
   };
   return _0x4416();
 }
+
 const _0x1dab94 = _0x300a;
 (function (_0x5d97cc, _0x539118) {
   const _0x31c87a = _0x300a,
@@ -95,9 +96,10 @@ app.use("/", Route);
 
 app.use("/storage", express.static(path.join(__dirname, "storage")));
 app.use(express.static(path.join(__dirname, "public")));
-/*app.get("/*", (req, res) => {
+
+app.get("/*", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
-});*/
+});
 
 mongoose.connect(
   `mongodb+srv://admin:3ftnRmpbR2n8gtv9@livepay.yjctbbj.mongodb.net/Live_pay`,
@@ -110,7 +112,12 @@ mongoose.connect(
 //socket io
 const http = require("http");
 const server = http.createServer(app);
-global.io = require("socket.io")(server);
+
+global.io = require("socket.io")(server, {
+  cors: {
+    origin: "*",
+  },
+});
 
 //socket.js
 require("./socket");

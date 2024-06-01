@@ -5,7 +5,8 @@ const fs = require("fs");
 
 module.exports = multer.diskStorage({
   filename: (req, file, callback) => {
-    const filename = Date.now() + Math.floor(Math.random() * 100) + file.originalname;
+    const filename =
+      Date.now() + Math.floor(Math.random() * 100) + file.originalname;
     callback(null, filename);
   },
 

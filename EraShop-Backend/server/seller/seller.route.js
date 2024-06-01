@@ -1,11 +1,12 @@
 //express
+const config = require("../../config");
 const express = require("express");
 const route = express.Router();
 
 //multer
 const multer = require("multer");
 const storage = require("../../util/multer");
-const upload = multer({ storage });
+const upload = multer({ storage, limits: { fileSize: config.UPLOAD_LIMIT } });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
 
@@ -16,28 +17,61 @@ const sellerController = require("./seller.controller");
 route.post("/login", checkAccessWithSecretKey(), sellerController.sellerLogin);
 
 //update real seller profile by admin
-route.patch("/update", checkAccessWithSecretKey(), upload.fields([{ name: "image" }]), sellerController.updateSellerProfile);
+route.patch(
+  "/update",
+  checkAccessWithSecretKey(),
+  upload.fields([{ name: "image" }]),
+  sellerController.updateSellerProfile
+);
 
 //get seller profile who is login
-route.get("/getProfile", checkAccessWithSecretKey(), sellerController.getProfile);
+route.get(
+  "/getProfile",
+  checkAccessWithSecretKey(),
+  sellerController.getProfile
+);
 
 //get all real seller for admin
-route.get("/getRealSeller", checkAccessWithSecretKey(), sellerController.getRealSeller);
+route.get(
+  "/getRealSeller",
+  checkAccessWithSecretKey(),
+  sellerController.getRealSeller
+);
 
 //seller is block or not
-route.patch("/blockUnblock", checkAccessWithSecretKey(), sellerController.blockUnblock);
+route.patch(
+  "/blockUnblock",
+  checkAccessWithSecretKey(),
+  sellerController.blockUnblock
+);
 
 //get the top sellers for admin(dashboard)
-route.get("/topSellers", checkAccessWithSecretKey(), sellerController.topSellers);
+route.get(
+  "/topSellers",
+  checkAccessWithSecretKey(),
+  sellerController.topSellers
+);
 
 //get seller wallet for admin
-route.get("/sellerWallet", checkAccessWithSecretKey(), sellerController.sellerWallet);
+route.get(
+  "/sellerWallet",
+  checkAccessWithSecretKey(),
+  sellerController.sellerWallet
+);
 
 //update password
-route.patch("/updatePassword", checkAccessWithSecretKey(), sellerController.updatePassword);
+route.patch(
+  "/updatePassword",
+  checkAccessWithSecretKey(),
+  sellerController.updatePassword
+);
 
 //set password
-route.post("/setPassword", checkAccessWithSecretKey(), sellerController.setPassword);
+route.post(
+  "/setPassword",
+  checkAccessWithSecretKey(),
+  sellerController.setPassword
+);
 
 //create fake seller by admin
 route.post(
@@ -56,15 +90,31 @@ route.patch(
 );
 
 //fakeSeller is live or not handled for admin
-route.patch("/liveOrNot", checkAccessWithSecretKey(), sellerController.liveOrNot);
+route.patch(
+  "/liveOrNot",
+  checkAccessWithSecretKey(),
+  sellerController.liveOrNot
+);
 
 //get all fake seller for admin
-route.get("/getFakeSeller", checkAccessWithSecretKey(), sellerController.getFakeSeller);
+route.get(
+  "/getFakeSeller",
+  checkAccessWithSecretKey(),
+  sellerController.getFakeSeller
+);
 
 //get all fake sellers when reel or product create by the admin (dropdown)
-route.get("/fakeSellers", checkAccessWithSecretKey(), sellerController.fakeSellers);
+route.get(
+  "/fakeSellers",
+  checkAccessWithSecretKey(),
+  sellerController.fakeSellers
+);
 
 //delete fake seller for admin
-route.delete("/deleteSeller", checkAccessWithSecretKey(), sellerController.deleteSeller);
+route.delete(
+  "/deleteSeller",
+  checkAccessWithSecretKey(),
+  sellerController.deleteSeller
+);
 
 module.exports = route;

@@ -1,11 +1,12 @@
 //express
+const config = require("../../config");
 const express = require("express");
 const route = express.Router();
 
 //multer
 const multer = require("multer");
 const storage = require("../../util/multer");
-const upload = multer({ storage });
+const upload = multer({ storage, limits: { fileSize: config.UPLOAD_LIMIT } });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
 
@@ -24,9 +25,17 @@ route.post(
 );
 
 //product request accept or decline to update product by admin
-route.patch("/acceptUpdateRequest", checkAccessWithSecretKey(), productRequestController.acceptUpdateRequest);
+route.patch(
+  "/acceptUpdateRequest",
+  checkAccessWithSecretKey(),
+  productRequestController.acceptUpdateRequest
+);
 
 //get status wise all product requests to update product for admin
-route.get("/updateProductRequestStatusWise", checkAccessWithSecretKey(), productRequestController.updateProductRequestStatusWise);
+route.get(
+  "/updateProductRequestStatusWise",
+  checkAccessWithSecretKey(),
+  productRequestController.updateProductRequestStatusWise
+);
 
 module.exports = route;

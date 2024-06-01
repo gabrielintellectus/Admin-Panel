@@ -1,11 +1,12 @@
 //express
+const config = require("../../config");
 const express = require("express");
 const route = express.Router();
 
 //multer
 const multer = require("multer");
 const storage = require("../../util/multer");
-const upload = multer({ storage });
+const upload = multer({ storage, limits: { fileSize: config.UPLOAD_LIMIT } });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
 
@@ -32,27 +33,60 @@ route.patch(
 route.get("/getReels", checkAccessWithSecretKey(), ReelController.getFakeReels);
 
 //get all real reels by the admin
-route.get("/getRealReels", checkAccessWithSecretKey(), ReelController.getRealReels);
+route.get(
+  "/getRealReels",
+  checkAccessWithSecretKey(),
+  ReelController.getRealReels
+);
 
 //get particular reels information for the admin
-route.get("/detailsOfReel", checkAccessWithSecretKey(), ReelController.detailsOfReel);
+route.get(
+  "/detailsOfReel",
+  checkAccessWithSecretKey(),
+  ReelController.detailsOfReel
+);
 
 //get particular reel's like history for the admin
-route.get("/likeHistoryOfReel", checkAccessWithSecretKey(), ReelController.likeHistoryOfReel);
+route.get(
+  "/likeHistoryOfReel",
+  checkAccessWithSecretKey(),
+  ReelController.likeHistoryOfReel
+);
 
 //delete reel by the admin and seller
-route.delete("/deleteReel", checkAccessWithSecretKey(), ReelController.deleteReel);
+route.delete(
+  "/deleteReel",
+  checkAccessWithSecretKey(),
+  ReelController.deleteReel
+);
 
 //upload reel by the seller
-route.post("/uploadReel", checkAccessWithSecretKey(), upload.fields([{ name: "video" }, { name: "thumbnail" }]), ReelController.uploadReel);
+route.post(
+  "/uploadReel",
+  checkAccessWithSecretKey(),
+  upload.fields([{ name: "video" }, { name: "thumbnail" }]),
+  ReelController.uploadReel
+);
 
 //if isFakeData switch on then get all (real + fake ) reels by the user otherwise only get all real reels by the user
-route.get("/getReelsForUser", checkAccessWithSecretKey(), ReelController.getReelsForUser);
+route.get(
+  "/getReelsForUser",
+  checkAccessWithSecretKey(),
+  ReelController.getReelsForUser
+);
 
 //get particular seller's reel by the seller
-route.get("/reelsOfSeller", checkAccessWithSecretKey(), ReelController.reelsOfSeller);
+route.get(
+  "/reelsOfSeller",
+  checkAccessWithSecretKey(),
+  ReelController.reelsOfSeller
+);
 
 //create like or dislike of reel by the user
-route.post("/likeOrDislikeOfReel", checkAccessWithSecretKey(), ReelController.likeOrDislikeOfReel);
+route.post(
+  "/likeOrDislikeOfReel",
+  checkAccessWithSecretKey(),
+  ReelController.likeOrDislikeOfReel
+);
 
 module.exports = route;

@@ -1,11 +1,12 @@
 //express
 const express = require("express");
 const route = express.Router();
+const config = require("../../config");
 
 //multer
 const multer = require("multer");
 const storage = require("../../util/multer");
-const upload = multer({ storage });
+const upload = multer({ storage, limits: { fileSize: config.UPLOAD_LIMIT } });
 
 //admin middleware
 const AdminMiddleware = require("../middleware/admin.middleware");
@@ -29,7 +30,12 @@ route.get("/profile", AdminMiddleware, AdminController.getProfile);
 route.patch("/updateProfile", AdminMiddleware, AdminController.update);
 
 //update admin Profile Image
-route.patch("/updateImage", AdminMiddleware, upload.single("image"), AdminController.updateImage);
+route.patch(
+  "/updateImage",
+  AdminMiddleware,
+  upload.single("image"),
+  AdminController.updateImage
+);
 
 //send email for forgot the password (forgot password)
 route.post("/forgotPassword", AdminController.forgotPassword);

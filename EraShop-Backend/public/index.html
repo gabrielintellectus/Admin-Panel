@@ -53,5 +53,26 @@
       <span id="status" class="font-bold">Olá, seja bem-vindo.</span>
     </footer>
   </body>
-  <script src="./index.js"></script>
+  <!-- <script src="./index.js"></script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var socket = io("https://service.livepay.app.br");
+
+      // PODE SER CONFIGURADO
+      // DAS SEGUINTES MANEIRAS:
+      // "https://service.livepay.app.br"
+      //  wss://service.livepay.app.br
+
+      const toggle = document.getElementById("toggle");
+
+      toggle.addEventListener("click", function () {
+        socket.emit(
+          "socket_health_check",
+          JSON.stringify({
+            message: "socket_health_check",
+          })
+        );
+      });
+    });
+  </script>
 </html>

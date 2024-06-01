@@ -108,7 +108,7 @@ const Route = require("./route");
 app.use("/", Route);
 
 app.use("/storage", express.static(path.join(__dirname, "storage")));
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/socket-health-check", (_, res) => {
   res.status(200).sendFile(path.join(__dirname, "public", "index.html"));

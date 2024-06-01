@@ -1,12 +1,14 @@
 //express
 const express = require("express");
 const route = express.Router();
+const config = require("../../config");
 
 //multer
 const multer = require("multer");
 const storage = require("../../util/multer");
 const upload = multer({
   storage,
+  limits: { fileSize: config.UPLOAD_LIMIT },
 });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
@@ -15,16 +17,30 @@ const checkAccessWithSecretKey = require("../../util/checkAccess");
 const CategoryController = require("./category.controller");
 
 //create category
-route.post("/create", checkAccessWithSecretKey(), upload.single("image"), CategoryController.store);
+route.post(
+  "/create",
+  checkAccessWithSecretKey(),
+  upload.single("image"),
+  CategoryController.store
+);
 
 //update category
-route.patch("/update", checkAccessWithSecretKey(), upload.single("image"), CategoryController.update);
+route.patch(
+  "/update",
+  checkAccessWithSecretKey(),
+  upload.single("image"),
+  CategoryController.update
+);
 
 //get all category with subCategory for seller
 route.get("/", checkAccessWithSecretKey(), CategoryController.get);
 
 //get all category for admin
-route.get("/getCategory", checkAccessWithSecretKey(), CategoryController.getCategory);
+route.get(
+  "/getCategory",
+  checkAccessWithSecretKey(),
+  CategoryController.getCategory
+);
 
 //delete category
 route.delete("/delete", checkAccessWithSecretKey(), CategoryController.destroy);

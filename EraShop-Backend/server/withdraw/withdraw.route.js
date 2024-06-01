@@ -1,4 +1,5 @@
 //express
+const config = require("../../config");
 const express = require("express");
 const route = express.Router();
 
@@ -7,6 +8,7 @@ const multer = require("multer");
 const storage = require("../../util/multer");
 const upload = multer({
   storage,
+  limits: { fileSize: config.UPLOAD_LIMIT },
 });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
@@ -15,10 +17,20 @@ const checkAccessWithSecretKey = require("../../util/checkAccess");
 const WithdrawController = require("./withdraw.controller");
 
 //store Withdraw
-route.post("/create", upload.single("image"), checkAccessWithSecretKey(), WithdrawController.store);
+route.post(
+  "/create",
+  upload.single("image"),
+  checkAccessWithSecretKey(),
+  WithdrawController.store
+);
 
 //update Withdraw
-route.patch("/update", upload.single("image"), checkAccessWithSecretKey(), WithdrawController.update);
+route.patch(
+  "/update",
+  upload.single("image"),
+  checkAccessWithSecretKey(),
+  WithdrawController.update
+);
 
 //get Withdraw
 route.get("/", checkAccessWithSecretKey(), WithdrawController.index);
@@ -27,9 +39,17 @@ route.get("/", checkAccessWithSecretKey(), WithdrawController.index);
 route.delete("/", checkAccessWithSecretKey(), WithdrawController.delete);
 
 //handle isEnabled switch
-route.patch("/handleSwitch", checkAccessWithSecretKey(), WithdrawController.handleSwitch);
+route.patch(
+  "/handleSwitch",
+  checkAccessWithSecretKey(),
+  WithdrawController.handleSwitch
+);
 
 //get withdraw list added by admin for user
-route.get("/withdrawalList", checkAccessWithSecretKey(), WithdrawController.withdrawalList);
+route.get(
+  "/withdrawalList",
+  checkAccessWithSecretKey(),
+  WithdrawController.withdrawalList
+);
 
 module.exports = route;

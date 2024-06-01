@@ -1,4 +1,5 @@
 //express
+const config = require("../../config");
 const express = require("express");
 const route = express.Router();
 
@@ -7,6 +8,7 @@ const multer = require("multer");
 const storage = require("../../util/multer");
 const upload = multer({
   storage,
+  limits: { fileSize: config.UPLOAD_LIMIT },
 });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
@@ -15,16 +17,33 @@ const checkAccessWithSecretKey = require("../../util/checkAccess");
 const sellerRequestController = require("./sellerRequest.controller");
 
 //create request by user
-route.post("/create", checkAccessWithSecretKey(), sellerRequestController.storeRequest);
+route.post(
+  "/create",
+  checkAccessWithSecretKey(),
+  sellerRequestController.storeRequest
+);
 
 //check seller become or not
-route.post("/sellerBecomeOrNot", checkAccessWithSecretKey(), sellerRequestController.sellerBecomeOrNot);
+route.post(
+  "/sellerBecomeOrNot",
+  checkAccessWithSecretKey(),
+  sellerRequestController.sellerBecomeOrNot
+);
 
 //update request by admin
-route.patch("/update", checkAccessWithSecretKey(), upload.single("image"), sellerRequestController.updateRequest);
+route.patch(
+  "/update",
+  checkAccessWithSecretKey(),
+  upload.single("image"),
+  sellerRequestController.updateRequest
+);
 
 //seller request accept or not by admin
-route.patch("/acceptOrNot", checkAccessWithSecretKey(), sellerRequestController.acceptRequest);
+route.patch(
+  "/acceptOrNot",
+  checkAccessWithSecretKey(),
+  sellerRequestController.acceptRequest
+);
 
 //get the all request for admin panel
 route.get("/", checkAccessWithSecretKey(), sellerRequestController.getRequest);

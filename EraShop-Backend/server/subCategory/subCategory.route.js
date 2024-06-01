@@ -1,3 +1,4 @@
+const config = require("../../config");
 //express
 const express = require("express");
 const route = express.Router();
@@ -7,6 +8,7 @@ const multer = require("multer");
 const storage = require("../../util/multer");
 const upload = multer({
   storage,
+  limits: { fileSize: config.UPLOAD_LIMIT },
 });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
@@ -15,18 +17,36 @@ const checkAccessWithSecretKey = require("../../util/checkAccess");
 const SubCategoryController = require("./subCategory.controller");
 
 //create subCategory
-route.post("/create", checkAccessWithSecretKey(), upload.single("image"), SubCategoryController.store);
+route.post(
+  "/create",
+  checkAccessWithSecretKey(),
+  upload.single("image"),
+  SubCategoryController.store
+);
 
 //update subCategory
-route.patch("/update", checkAccessWithSecretKey(), upload.single("image"), SubCategoryController.update);
+route.patch(
+  "/update",
+  checkAccessWithSecretKey(),
+  upload.single("image"),
+  SubCategoryController.update
+);
 
 //get subCategory
 route.get("/", checkAccessWithSecretKey(), SubCategoryController.get);
 
 //delete subCategory
-route.delete("/delete", checkAccessWithSecretKey(), SubCategoryController.destroy);
+route.delete(
+  "/delete",
+  checkAccessWithSecretKey(),
+  SubCategoryController.destroy
+);
 
 //get category wise subCategory for admin panel and seller
-route.get("/categoryWiseSubCategory", checkAccessWithSecretKey(), SubCategoryController.categoryWiseSubCategory);
+route.get(
+  "/categoryWiseSubCategory",
+  checkAccessWithSecretKey(),
+  SubCategoryController.categoryWiseSubCategory
+);
 
 module.exports = route;

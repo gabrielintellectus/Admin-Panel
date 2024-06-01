@@ -18,4 +18,6 @@ module.exports = {
 
   //Firebase server key for send notification
   SERVER_KEY: "AIzaSyCSFvenY7LWz5qTGIYB6Zfomx2aE9GLiyw",
+
+  UPLOAD_LIMIT: 50 * 1024 * 1024,
 };

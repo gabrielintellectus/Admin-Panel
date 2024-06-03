@@ -6,7 +6,7 @@ const route = express.Router();
 //multer
 const multer = require("multer");
 const storage = require("../../util/multer");
-const upload = multer({ storage }) //limits: { fileSize: config.UPLOAD_LIMIT } });
+const upload = multer({ storage, limits: { fileSize: config.UPLOAD_LIMIT } });
 
 const checkAccessWithSecretKey = require("../../util/checkAccess");
 

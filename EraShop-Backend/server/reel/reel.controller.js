@@ -277,10 +277,15 @@ exports.detailsOfReel = async (req, res, next) => {
       return res.status(200).json({ satus: false, message: "reel does not found!" });
     }
 
+    const seller = await Seller.findOne({ _id: reel.sellerId })
+    const products = await Product.find({ seller: seller._id })
+
     return res.status(200).json({
       status: true,
       message: "finally, get details of the reel by the admin!",
       reel: reel,
+      seller: seller,
+      products: products
     });
   } catch (error) {
     console.log(error);

@@ -59,9 +59,9 @@ exports.store = async (req, res) => {
     tab += `<div style="margin:50px auto;width:70%;padding:20px 0"><div style="border-bottom:1px solid #eee">
             <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">Hi, Mr./Mis. ${userName}</a>
           </div>`;
-    tab += ` <p style="font-size:1.1em">Hi,</p><p>Thank you for choosing EraShop. Use the following OTP to forget the Password for Password Security</p>`;
+    tab += ` <p style="font-size:1.1em">Hi,</p><p>Thank you for choosing LivePay. Use the following OTP to forget the Password for Password Security</p>`;
     tab += `<h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">${newOtp}</h2>`;
-    tab += ` <p style="font-size:0.9em;">Regards,<br />EraShop</p><hr style="border:none;border-top:1px solid #eee" />`;
+    tab += ` <p style="font-size:0.9em;">Regards,<br />LivePay</p><hr style="border:none;border-top:1px solid #eee" />`;
     tab += ` <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">`;
     tab += `  </div></div></div></body></html>`;
 
@@ -182,7 +182,7 @@ exports.otplogin = async (req, res) => {
     var mailOptions = {
       from: `${config.EMAIL}`,
       to: req.body.email,
-      subject: "Sending Email from EraShop",
+      subject: "Sending Email from LivePay",
       html: tab,
     };
 

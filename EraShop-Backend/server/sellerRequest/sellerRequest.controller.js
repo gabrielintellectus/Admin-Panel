@@ -74,7 +74,7 @@ exports.storeRequest = async (req, res) => {
     request.uniqueId = user.uniqueId;
     request.image = user.image;
     request.gender = user.gender;
-    request.date = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+    request.date = new Date().toLocaleString("pt-BR", { timeZone: "Brazil/East" });
     request.fcmToken = user.fcmToken;
 
     //seller's address fields

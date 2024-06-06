@@ -388,7 +388,7 @@ const AddSeller = (props) => {
                               borderRadius: "10px",
                             }}
                             alt=""
-                            srcset=""
+                            srcSet=""
                           />
                         </>
                       )}

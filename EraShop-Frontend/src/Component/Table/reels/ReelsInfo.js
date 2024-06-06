@@ -423,7 +423,7 @@ const ReelsInfo = (props) => {
                                           fill="#b93160"
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
-                                          <g clip-path="url(#clip0_33622_2928)">
+                                          <g clipPath="url(#clip0_33622_2928)">
                                             <path
                                               d="M34 0H0V34H34V0Z"
                                               fill="#b93160"

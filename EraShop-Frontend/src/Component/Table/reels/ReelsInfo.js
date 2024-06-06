@@ -434,8 +434,8 @@ const ReelsInfo = (props) => {
                                               fill="#b93160"
                                               stroke="#b93160"
                                               strokeWidth="2.2"
-                                              stroke-linecap="round"
-                                              stroke-linejoin="round"
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
                                             />
                                           </g>
                                           <defs>

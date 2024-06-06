@@ -32,7 +32,7 @@ const Navigator = (props) => {
               )}
               <span className="text-capitalize ms-3">{name}</span>
             </div>
-            {props?.children && <i class="fa-solid fa-angle-right"></i>}
+            {props?.children && <i className="fa-solid fa-angle-right"></i>}
           </Link>
         </Tooltip>
         {/* If Submenu */}

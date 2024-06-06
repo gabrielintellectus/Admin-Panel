@@ -194,7 +194,7 @@ const ProductDetail = (props) => {
                             initialValue={
                               productDetail[0]?.rating[0]?.avgRating
                             }
-                            readonly={true}
+                            readOnly={true}
                             allowFraction
                           />
                         </div>
@@ -401,7 +401,7 @@ const ProductDetail = (props) => {
                                         <div className="d-flex">
                                           <Rating
                                             initialValue={data?.rating}
-                                            readonly={true}
+                                            readOnly={true}
                                             allowFraction
                                             className="mt-2"
                                           />

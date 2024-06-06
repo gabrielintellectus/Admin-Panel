@@ -849,7 +849,7 @@ const AddProduct = (props) => {
                                 }}
                               >
                                 <i
-                                  class="fas fa-times-circle text-danger"
+                                  className="fas fa-times-circle text-danger"
                                   style={{
                                     position: "absolute",
                                     right: "10px",

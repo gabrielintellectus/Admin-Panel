@@ -51,7 +51,7 @@ const LiveSellerProduct = (props) => {
                       <Rating
                         className="my-2 fs-6"
                         initialValue={product?.rating}
-                        readonly={true}
+                        readOnly={true}
                         allowFraction
                       />
                       <h6 className="fw-bolder" style={{ color: "#B93160" }}>

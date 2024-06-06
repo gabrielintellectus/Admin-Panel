@@ -552,8 +552,8 @@ const AddProduct = (props) => {
                       )}
                     </div>
                     <div className="col-lg-4 col-md-6">
-                      <div class="row d-flex">
-                        <div class={`${mongoId ? "col-12" : "col-md-10"}`}>
+                      <div className="row d-flex">
+                        <div className={`${mongoId ? "col-12" : "col-md-10"}`}>
                           <Input
                             label={`Product Code (6 digit)`}
                             id={`productCode`}
@@ -704,7 +704,7 @@ const AddProduct = (props) => {
                         Description
                       </label>
                       <textarea
-                        class="form-control"
+                        className="form-control"
                         placeholder="description..."
                         id="exampleFormControlTextarea1"
                         rows="5"
@@ -741,7 +741,7 @@ const AddProduct = (props) => {
                   </div>
                   <div className="row">
                     <div className="col-xl-2 col-md-4 col-12 mt-2">
-                      <label class="float-left dialog__input__title">
+                      <label className="float-left dialog__input__title">
                         Select (Multiple) Image
                       </label>
 
@@ -800,7 +800,7 @@ const AddProduct = (props) => {
                               draggable="false"
                             />
                             <div
-                              class="img-container"
+                              className="img-container"
                               style={{
                                 display: "inline",
                                 position: "relative",
@@ -808,7 +808,7 @@ const AddProduct = (props) => {
                               }}
                             >
                               <i
-                                class="fas fa-times-circle text-danger"
+                                className="fas fa-times-circle text-danger"
                                 style={{
                                   position: "absolute",
                                   right: "10px",
@@ -841,7 +841,7 @@ const AddProduct = (props) => {
                                 draggable="false"
                               />
                               <div
-                                class="img-container"
+                                className="img-container"
                                 style={{
                                   display: "inline",
                                   position: "relative",

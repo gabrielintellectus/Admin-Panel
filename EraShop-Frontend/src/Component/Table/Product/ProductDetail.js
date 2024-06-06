@@ -188,8 +188,8 @@ const ProductDetail = (props) => {
                           </span>
                         </div>
                       </div>
-                      <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
-                        <div class="text-muted fs-16">
+                      <div className="d-flex flex-wrap gap-2 align-items-center mt-3">
+                        <div className="text-muted fs-16">
                           <Rating
                             initialValue={
                               productDetail[0]?.rating[0]?.avgRating
@@ -198,7 +198,7 @@ const ProductDetail = (props) => {
                             allowFraction
                           />
                         </div>
-                        <div class="text-muted">
+                        <div className="text-muted">
                           {"(" +
                             productDetail[0]?.review +
                             " Customer Review )"}

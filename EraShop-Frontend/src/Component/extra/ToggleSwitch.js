@@ -3,7 +3,7 @@ import React from "react";
 const ToggleSwitch = (props) => {
   return (
     <>
-      <label class="switch">
+      <label className="switch">
         <input
           type="checkbox"
           checked={props.value}
@@ -11,7 +11,7 @@ const ToggleSwitch = (props) => {
           className="checkbox"
           disabled={props.disabled}
         />
-        <div class="slider"></div>
+        <div className="slider"></div>
       </label>
 
     

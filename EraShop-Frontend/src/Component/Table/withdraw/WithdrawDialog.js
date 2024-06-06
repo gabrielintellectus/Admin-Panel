@@ -112,7 +112,7 @@ const WithdrawDialog = (props) => {
               dispatch({ type: CLOSE_DIALOGUE });
             }}
           >
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </div>
         </div>
         <div className="dialogueMain">
@@ -194,7 +194,7 @@ const WithdrawDialog = (props) => {
                         >
                           {item}
                           <i
-                            class="fa-solid fa-circle-xmark ms-2 my-2"
+                            className="fa-solid fa-circle-xmark ms-2 my-2"
                             style={{cursor: "pointer"}}
                             onClick={() => {
                               onRemove(id);

@@ -161,7 +161,7 @@ const AdminProfile = (props) => {
                           >
                             <label for="file-input">
                               <i
-                                class="fa-solid fa-camera d-flex justify-content-center  rounded-circle  p-2 cursorPointer"
+                                className="fa-solid fa-camera d-flex justify-content-center  rounded-circle  p-2 cursorPointer"
                                 style={{
                                   fontSize: "15px",
                                   color: "#ffff",
@@ -201,7 +201,7 @@ const AdminProfile = (props) => {
                     <div className="card-body">
                       <div className="title d-flex mb-2">
                         <h4 className="fw-bold me-2 ">Edit Profile</h4>
-                        <i class="fa-solid fa-pen-to-square fs-5 pt-1"></i>
+                        <i className="fa-solid fa-pen-to-square fs-5 pt-1"></i>
                       </div>
                       <Input
                         label={`Name`}
@@ -265,7 +265,7 @@ const AdminProfile = (props) => {
                     <div className="card-body">
                       <div className="title d-flex mb-2">
                         <h4 className="fw-bold me-2 ">Change Password</h4>
-                        <i class="fa-solid fa-lock fs-5 pt-1"></i>
+                        <i className="fa-solid fa-lock fs-5 pt-1"></i>
                       </div>
                       <div className="row">
                         <div className="col-12">

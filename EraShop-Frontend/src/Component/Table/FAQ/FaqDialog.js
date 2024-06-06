@@ -66,7 +66,7 @@ const PromoDialog = (props) => {
               dispatch({ type: CLOSE_DIALOGUE });
             }}
           >
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </div>
         </div>
         <div className="dialogueMain">
@@ -101,7 +101,7 @@ const PromoDialog = (props) => {
                 Answer
               </label>
               <textarea
-                class="form-control"
+                className="form-control"
                 placeholder="answer..."
                 id="exampleFormControlTextarea1"
                 rows="5"

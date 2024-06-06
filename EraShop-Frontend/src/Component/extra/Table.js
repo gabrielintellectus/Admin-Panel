@@ -47,7 +47,7 @@ function Table(props) {
                     {`${" "}${res.Header}`}
                     {res?.sorting && (
                       <i
-                        class="fa-solid fa-sort deg90 ms-1"
+                        className="fa-solid fa-sort deg90 ms-1"
                         onClick={() => handleColumnClick(res.body)}
                         style={{ cursor: "pointer" }}
                       ></i>

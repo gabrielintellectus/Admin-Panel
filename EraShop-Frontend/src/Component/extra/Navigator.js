@@ -51,7 +51,7 @@ const Navigator = (props) => {
                         "activeMenu"
                       }`}
                     >
-                      <i class="fa-solid fa-circle me-2"></i>
+                      <i className="fa-solid fa-circle me-2"></i>
                       <span>{subName}</span>
                     </Link>
                   </li>

@@ -96,7 +96,7 @@ const AttributeDialog = () => {
               dispatch({ type: CLOSE_DIALOGUE });
             }}
           >
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </div>
         </div>
         <div className="dialogueMain">
@@ -236,7 +236,7 @@ const AttributeDialog = () => {
                         >
                           {item}
                           <i
-                            class="fa-solid fa-circle-xmark ms-2 my-2"
+                            className="fa-solid fa-circle-xmark ms-2 my-2"
                             onClick={() => {
                               onRemove(id);
                             }}

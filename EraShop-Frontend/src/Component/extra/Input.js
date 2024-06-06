@@ -56,15 +56,15 @@ const Input = (props) => {
         {type === "password" && (
           <div className="passHideShow" onClick={hideShow}>
             {types === "password" ? (
-              <i class="fa-solid fa-eye"></i>
+              <i className="fa-solid fa-eye"></i>
             ) : (
-              <i class="fa-solid fa-eye-slash"></i>
+              <i className="fa-solid fa-eye-slash"></i>
             )}
           </div>
         )}
         {type === "search" && !value && (
           <div className="searching">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </div>
         )}
       </div>

@@ -91,7 +91,7 @@ const SubCategoryDialoge = (props) => {
               dispatch({ type: CLOSE_DIALOGUE });
             }}
           >
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </div>
         </div>
         <div className="dialogueMain">

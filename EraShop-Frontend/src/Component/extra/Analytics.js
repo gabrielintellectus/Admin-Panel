@@ -45,7 +45,7 @@ const Analytics = (props) => {
           <input
             type="text"
             readOnly
-            class="daterange form-control float-left  mr-4 "
+            className="daterange form-control float-left  mr-4 "
             value="Select Date"
             style={{
               width: "120px",

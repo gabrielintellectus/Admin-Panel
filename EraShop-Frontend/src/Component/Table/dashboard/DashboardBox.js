@@ -29,7 +29,7 @@ const DashboardBox = (props) => {
           style={{
             background: `${background}`,
             color: `${color}`,
-            border: `${border.toString()}`,
+            border: `${border === true ? "1px": border}`,
           }}
         >
           <div className="d-flex justify-content-between py-3">

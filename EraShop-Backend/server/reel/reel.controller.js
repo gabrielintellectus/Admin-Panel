@@ -29,7 +29,7 @@ exports.getRealReels = async (req, res) => {
       Reel.countDocuments({ isFake: false }),
       Reel.find({ isFake: false })
         .populate([
-          { path: "sellerId", select: "firstName lastName businessTag businessName" },
+          { path: "sellerId", select: "firstName lastName businessTag businessName image" },
           { path: "productId", select: "productName productCode price shippingCharges mainImage seller createStatus attributes" },
         ])
         .sort({ createdAt: -1 })

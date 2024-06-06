@@ -211,7 +211,7 @@ const Seller = (props) => {
         <div
           className={`boxCenter`}
         >
-          <ToggleSwitch value={row?.isBlock} onClick={() => handleClick(row)} disabled={row?.email === "erashoptest@gmail.com" && true}  />
+          <ToggleSwitch value={row?.isBlock} onClick={() => handleClick(row)} disabled={row?.email === "livepaytest@gmail.com" && true}  />
         </div>
       ),
     },

@@ -444,7 +444,7 @@ const FakeSellerDialog = (props) => {
                         id={`male`}
                         type={`radio`}
                         value={`male`}
-                        defaultChecked={(gender == "male" || gender == "Male") && true}
+                        checked={(gender == "male" || gender == "Male") && true}
                         newClass={`me-3`}
                         onChange={(e) => {
                           setGender(e.target.value);
@@ -467,7 +467,7 @@ const FakeSellerDialog = (props) => {
                         id={`female`}
                         type={`radio`}
                         value={`female`}
-                        defaultChecked={
+                        checked={
                           (gender == "female" || gender == "Female") && true
                         }
                         onChange={(e) => {

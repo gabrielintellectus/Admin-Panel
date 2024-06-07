@@ -410,7 +410,7 @@ const EditSellerRequest = (props) => {
                           id={`male`}
                           type={`radio`}
                           value={`male`}
-                          defaultChecked={
+                          checked={
                             (gender == "male" || gender == "Male") && true
                           }
                           newClass={`me-3`}
@@ -435,7 +435,7 @@ const EditSellerRequest = (props) => {
                           id={`female`}
                           type={`radio`}
                           value={`female`}
-                          defaultChecked={
+                          checked={
                             (gender == "female" || gender == "Female") && true
                           }
                           onChange={(e) => {

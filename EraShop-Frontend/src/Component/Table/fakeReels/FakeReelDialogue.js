@@ -301,7 +301,7 @@ const FakeReelDialogue = (props) => {
                     id={`file`}
                     type={`radio`}
                     value={"1"}
-                    defaultChecked={videoType == 1 ? true : false}
+                    checked={videoType == 1 ? true : false}
                     newClass={`me-3 ms-2 mb-2`}
                     onClick={(e) => {
                       setVideoType(e.target.value);
@@ -314,7 +314,7 @@ const FakeReelDialogue = (props) => {
                     type={`radio`}
                     value={"2"}
                     newClass={`mb-2`}
-                    defaultChecked={videoType == 2 ? true : false}
+                    checked={videoType == 2 ? true : false}
                     onClick={(e) => {
                       setVideoType(e.target.value);
                     }}

@@ -421,7 +421,7 @@ const EditSellerR = (props) => {
                           id={`female`}
                           type={`radio`}
                           value={`female`}
-                          checked={
+                          defaultChecked={
                             (gender == "female" || gender == "Female") && true
                           }
                           onChange={(e) => {

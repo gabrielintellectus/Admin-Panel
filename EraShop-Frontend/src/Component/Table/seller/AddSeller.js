@@ -405,7 +405,7 @@ const AddSeller = (props) => {
                           id={`male`}
                           type={`radio`}
                           value={`male`}
-                          checked={
+                          defaultChecked={
                             (gender == "male" || gender == "Male") && true
                           }
                           newClass={`me-3`}
@@ -430,7 +430,7 @@ const AddSeller = (props) => {
                           id={`female`}
                           type={`radio`}
                           value={`female`}
-                          checked={
+                          defaultChecked={
                             (gender == "female" || gender == "Female") && true
                           }
                           onChange={(e) => {

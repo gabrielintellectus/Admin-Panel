@@ -6,7 +6,7 @@ const ToggleSwitch = (props) => {
       <label className="switch">
         <input
           type="checkbox"
-          checked={props.value}
+          defaultChecked={props.value}
           onClick={props.onClick}
           className="checkbox"
           disabled={props.disabled}

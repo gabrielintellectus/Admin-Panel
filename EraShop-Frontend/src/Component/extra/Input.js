@@ -43,7 +43,7 @@ const Input = (props) => {
           disabled={disabled}
           readOnly={readOnly}
           onKeyPress={onKeyPress}
-          checked={checked}
+          defaultChecked={checked}
           onClick={onClick}
         />
         

@@ -146,7 +146,7 @@ const PromoDialog = (props) => {
                   }
                 }}
               >
-                <option value="" disabled selected>
+                <option value="" disabled defaultValue>
                   --select--
                 </option>
                 <option value="0">Flat</option>

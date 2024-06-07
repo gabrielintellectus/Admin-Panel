@@ -354,7 +354,7 @@ const AddProduct = (props) => {
                           }
                         }}
                       >
-                        <option value="" disabled selected>
+                        <option value="" disabled defaultValue>
                           --select seller--
                         </option>
                         {fakeSeller?.map((data) => {
@@ -422,7 +422,7 @@ const AddProduct = (props) => {
                           }
                         }}
                       >
-                        <option value="" disabled selected>
+                        <option value="" disabled defaultValue>
                           --select category--
                         </option>
                         {category.map((data) => {

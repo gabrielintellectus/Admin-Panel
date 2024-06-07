@@ -120,7 +120,7 @@ const EditOrder = (props) => {
                   }
                 }}
               >
-                <option value="" disabled selected>
+                <option value="" disabled defaultValue>
                   --select status--
                 </option>
                 <option value="Pending">Pending</option>

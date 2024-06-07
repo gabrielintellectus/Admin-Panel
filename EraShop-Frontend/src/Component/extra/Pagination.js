@@ -138,7 +138,7 @@ const Pagination = (props) => {
               <option className="fs-6 fw-semibold " value="5">
                 5
               </option>
-              <option className="fs-6 fw-semibold " value="10" selected>
+              <option className="fs-6 fw-semibold " value="10" defaultValue>
                 10
               </option>
               <option className="fs-6 fw-semibold " value="25">
@@ -222,7 +222,7 @@ const Pagination = (props) => {
             onChange={(e) => onRowsPerPageChange(e.target.value)}
           >
             <option value="5">5</option>
-            <option value="10" selected>
+            <option value="10" defaultValue>
               10
             </option>
             <option value="15">15</option>

@@ -236,7 +236,7 @@ const FakeReelDialogue = (props) => {
                     }
                   }}
                 >
-                  <option value="" disabled selected>
+                  <option value="" disabled defaultValue>
                     --select seller--
                   </option>
                   {fakeSeller?.map((data) => {
@@ -275,7 +275,7 @@ const FakeReelDialogue = (props) => {
                     }
                   }}
                 >
-                  <option value="" disabled selected>
+                  <option value="" disabled defaultValue>
                     --select product--
                   </option>
                   {product?.map((data) => {

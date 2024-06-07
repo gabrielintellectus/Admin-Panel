@@ -125,7 +125,7 @@ const SubCategoryDialoge = (props) => {
                   <option
                     value={data._id}
                     key={data?._id}
-                    selected={data?._id === categoryType}
+                    defaultValue={data?._id === categoryType}
                     readOnly // Check if the current option's value matches the default category ID
                   >
                     {data?.name}

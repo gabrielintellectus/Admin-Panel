@@ -110,7 +110,7 @@ const AddSeller = (props) => {
       !mobileNumber ||
       !image ||
       mobileNumber?.length < 0 ||
-      mobileNumber?.length > 10 ||
+      mobileNumber?.length > 11 ||
       !email ||
       !password ||
       !confirmPassword ||

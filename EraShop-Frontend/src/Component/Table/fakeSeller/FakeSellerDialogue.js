@@ -129,7 +129,7 @@ const FakeSellerDialog = (props) => {
       !mobileNumber ||
       !image ||
       mobileNumber?.length < 0 ||
-      mobileNumber?.length > 10 ||
+      mobileNumber?.length > 11 ||
       !email ||
       !password ||
       !confirmPassword ||
@@ -155,7 +155,7 @@ const FakeSellerDialog = (props) => {
       if (!firstName) error.firstName = "First Name Is Required ";
       if (!lastName) error.lastName = "Last Name Is Required ";
       if (!mobileNumber) error.mobileNumber = "Mobile Number Is Required ";
-      if (mobileNumber?.length > 10)
+      if (mobileNumber?.length > 11)
         error.mobileNumber = "Invalid Mobile Number...";
       if (image?.length === 0 || !imagePath) error.image = "Image is required!";
       if (video?.length === 0 || !videoPath) error.video = "Video is required!";

@@ -17,8 +17,8 @@
   "dependencies": {
     "agora-access-token": "^2.0.4",
     "bcryptjs": "^2.4.3",
+    "correios-brasil": "^3.0.6",
     "cors": "^2.8.5",
-    "live-stream-server": "^2.0.1",
     "cryptr": "^6.2.0",
     "dayjs": "^1.11.7",
     "express": "^4.18.2",
@@ -26,6 +26,7 @@
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.0",
+    "live-stream-server": "^2.0.1",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "mongoose": "^7.0.2",

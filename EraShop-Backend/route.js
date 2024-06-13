@@ -120,4 +120,9 @@ app.use("/reportToReel", ReportToReelRoute);
 const LoginRoute = require("./server/login/login.route");
 app.use("/", LoginRoute);
 
+//Delivery Route
+const PaymentRoute = require("./server/payment/payment.route");
+app.use("/payment", PaymentRoute);
+
+
 module.exports = app;

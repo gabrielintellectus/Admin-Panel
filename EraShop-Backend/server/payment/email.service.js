@@ -48,7 +48,7 @@ exports.send = async (email, userName, orderId) => {
         tab += `<p>Product Quantity: ${item.productQuantity}</p>`;
         tab += `<p>Purchased Time Product Price: ${item.purchasedTimeProductPrice}</p>`;
         tab += `<p>Purchased Time Shipping Charges: ${item.purchasedTimeShippingCharges}</p>`;
-        tab += `<h5 style="color: green">Status: ${item.status}</h5>`;
+        tab += `<h5>Status: ${item.status}</h5>`;
         tab += `<hr style="border:none;border-top:1px solid #eee" />`;
       });
     

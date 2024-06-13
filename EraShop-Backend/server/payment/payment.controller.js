@@ -1,7 +1,8 @@
 const Payment = require("./payment.model");
 const Order = require("../order/order.model");
+const User = require("../user/user.model");
 
-const Send = require("./email.service")
+const Email = require("./email.service")
 
 
 //create payment by the user
@@ -55,7 +56,7 @@ exports.stripeWebHook = async (req, res) => {
       return res.status(201).json({
         received: true
       });
-    } else if (event?.paid === true && event?.object?.amount === order.finalTotal){
+    } else if (event?.data?.object?.paid === true && event?.data?.object?.amount === order.finalTotal) {
 
       // Handle the event
       switch (event.type) {
@@ -93,15 +94,9 @@ exports.stripeWebHook = async (req, res) => {
           console.log(`Unhandled event type ${event.type}`);
       }
 
-
       const userEmail = await User.findById(order?.userId);
 
-      const send = Send(userEmail, order._id)
-      if(!send) {
-        return res.status(207).json({
-          received: true
-        });
-      }
+      await Email.send(userEmail.email, userEmail.firstName, order._id)
 
       return res.status(200).json({
         received: true

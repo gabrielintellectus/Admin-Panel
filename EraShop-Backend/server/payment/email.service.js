@@ -3,17 +3,12 @@ const Order = require("../order/order.model");
 //nodemailer
 const nodemailer = require("nodemailer");
 
-//import model
-const User = require("../user/user.model");
-
 //Config
 const config = require("../../config");
 
-exports.send = async (email, orderId) => {
+exports.send = async (email, userName, orderId) => {
     try {
       const order = await Order.findById(orderId);
-  
-      const userName = email.substring(0, email.lastIndexOf("@"));
   
       var transporter = nodemailer.createTransport({
         service: "Gmail",
@@ -73,12 +68,14 @@ exports.send = async (email, orderId) => {
   
       transporter.sendMail(mailOptions, (error, result) => {
         if (error) {
+          console.error(error)
           return false
         } else {
           return true
         }
       });
     } catch (error) {
+      console.error(error)
       return false
     }
   };

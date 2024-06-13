@@ -28,9 +28,8 @@ exports.send = async (email, userName, orderId) => {
       tab += `<meta name="viewport" content="width=device-width, initial-scale=1.0">`;
       tab += `</head><body><div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">`;
       tab += `<div style="margin:50px auto;width:70%;padding:20px 0"><div style="border-bottom:1px solid #eee">`;
-      tab += `<a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">Hi, Mr./Ms. ${userName}</a>`;
+      tab += `<a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">Hi, ${userName}</a>`;
       tab += `</div>`;
-      tab += `<p style="font-size:1.1em">Hi,</p><p>Thank you for choosing LivePay.</p>`;
       tab += `<div style="padding:20px;">`;
     
       tab += `<h3>Order Details</h3>`;
@@ -49,7 +48,7 @@ exports.send = async (email, userName, orderId) => {
         tab += `<p>Product Quantity: ${item.productQuantity}</p>`;
         tab += `<p>Purchased Time Product Price: ${item.purchasedTimeProductPrice}</p>`;
         tab += `<p>Purchased Time Shipping Charges: ${item.purchasedTimeShippingCharges}</p>`;
-        tab += `<p style="color: green">Status: ${item.status}</p>`;
+        tab += `<h5 style="color: green">Status: ${item.status}</h5>`;
         tab += `<hr style="border:none;border-top:1px solid #eee" />`;
       });
     

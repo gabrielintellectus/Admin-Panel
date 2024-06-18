@@ -280,10 +280,13 @@ exports.detailsOfReel = async (req, res, next) => {
     const seller = await Seller.findOne({ _id: reel.sellerId })
     const products = await Product.find({ seller: seller._id })
 
+    const isLike = !req.query.userId ? false : await LikeHistoryOfReel.findOne({ userId: req.query.userId })
+
     return res.status(200).json({
       status: true,
       message: "finally, get details of the reel by the admin!",
       reel: reel,
+      isLike: !isLike ? false : true,
       seller: seller,
       products: products
     });
